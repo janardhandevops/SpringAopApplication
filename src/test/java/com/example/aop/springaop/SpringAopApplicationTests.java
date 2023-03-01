@@ -8,6 +8,7 @@ class SpringAopApplicationTests {
 
 	@Test
 	void contextLoads() {
+		SpringAopApplication.main(new String[]{"Test Processing"});
 	}
 
 }
