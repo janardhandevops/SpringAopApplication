@@ -14,10 +14,10 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @PostMapping
-    public Employee save(@RequestBody Employee employee ){
-        return employeeService.save(employee);
-    }
+//    @PostMapping
+//    public Employee save(@RequestBody Employee employee ){
+//        return employeeService.save(employee);
+//    }
 
     @GetMapping("/{id}")
     public Employee findById( @PathVariable(value = "id") Integer id ){

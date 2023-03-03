@@ -1,23 +1,20 @@
 package com.example.aop.springaop.controller;
 
-import static org.mockito.Mockito.any;
-import static org.mockito.Mockito.when;
-
 import com.example.aop.springaop.model.Employee;
 import com.example.aop.springaop.service.EmployeeService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.when;
 
 @ContextConfiguration(classes = {EmployeeController.class})
 @ExtendWith(SpringExtension.class)
@@ -72,20 +69,20 @@ class EmployeeControllerTest {
     /**
      * Method under test: {@link EmployeeController#save(Employee)}
      */
-    @Test
-    void testSave() throws Exception {
-        Employee employee = new Employee();
-        employee.setDepartment("Department");
-        employee.setId(1);
-        employee.setName("Name");
-        String content = (new ObjectMapper()).writeValueAsString(employee);
-        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/employees")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(content);
-        ResultActions actualPerformResult = MockMvcBuilders.standaloneSetup(this.employeeController)
-                .build()
-                .perform(requestBuilder);
-        actualPerformResult.andExpect(MockMvcResultMatchers.status().is(405));
-    }
+//    @Test
+//    void testSave() throws Exception {
+//        Employee employee = new Employee();
+//        employee.setDepartment("Department");
+//        employee.setId(1);
+//        employee.setName("Name");
+//        String content = (new ObjectMapper()).writeValueAsString(employee);
+//        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/employees")
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .content(content);
+//        ResultActions actualPerformResult = MockMvcBuilders.standaloneSetup(this.employeeController)
+//                .build()
+//                .perform(requestBuilder);
+//        actualPerformResult.andExpect(MockMvcResultMatchers.status().is(405));
+//    }
 }
 

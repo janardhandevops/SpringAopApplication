@@ -1,12 +1,15 @@
 package com.example.aop.springaop.model;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Table
-@Data
+@Getter
+@Setter
 public class Department {
 
     @Id

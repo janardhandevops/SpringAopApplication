@@ -12,10 +12,10 @@ public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
-    @PostMapping
-    public Department save( @RequestBody Department department ){
-        return departmentService.save(department);
-    }
+//    @PostMapping
+//    public Department save( @RequestBody Department department ){
+//        return departmentService.save(department);
+//    }
 
     @GetMapping("/{id}")
     public Department findById( @PathVariable(value = "id") Integer id ){

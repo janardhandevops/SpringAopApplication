@@ -64,41 +64,41 @@ class DepartmentControllerTest {
                 .andExpect(MockMvcResultMatchers.content().contentType("application/json"))
                 .andExpect(MockMvcResultMatchers.content().string("{\"id\":1,\"name\":\"Name\"}"));
     }
-
-    /**
-     * Method under test: {@link DepartmentController#save(Department)}
-     */
-    @Test
-    void testSave() throws Exception {
-        Department department = new Department();
-        department.setId(1);
-        department.setName("Name");
-        String content = (new ObjectMapper()).writeValueAsString(department);
-        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/departments")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(content);
-        ResultActions actualPerformResult = MockMvcBuilders.standaloneSetup(this.departmentController)
-                .build()
-                .perform(requestBuilder);
-        actualPerformResult.andExpect(MockMvcResultMatchers.status().is(405));
-    }
-
-    /**
-     * Method under test: {@link DepartmentController#save(Department)}
-     */
-    @Test
-    void testSave2() throws Exception {
-        Department department = new Department();
-        department.setId(1);
-        department.setName("Name");
-        String content = (new ObjectMapper()).writeValueAsString(department);
-        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/departments")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(content);
-        ResultActions actualPerformResult = MockMvcBuilders.standaloneSetup(this.departmentController)
-                .build()
-                .perform(requestBuilder);
-        actualPerformResult.andExpect(MockMvcResultMatchers.status().is(405));
-    }
+//
+//    /**
+//     * Method under test: {@link DepartmentController#save(Department)}
+//     */
+//    @Test
+//    void testSave() throws Exception {
+//        Department department = new Department();
+//        department.setId(1);
+//        department.setName("Name");
+//        String content = (new ObjectMapper()).writeValueAsString(department);
+//        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/departments")
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .content(content);
+//        ResultActions actualPerformResult = MockMvcBuilders.standaloneSetup(this.departmentController)
+//                .build()
+//                .perform(requestBuilder);
+//        actualPerformResult.andExpect(MockMvcResultMatchers.status().is(405));
+//    }
+//
+//    /**
+//     * Method under test: {@link DepartmentController#save(Department)}
+//     */
+//    @Test
+//    void testSave2() throws Exception {
+//        Department department = new Department();
+//        department.setId(1);
+//        department.setName("Name");
+//        String content = (new ObjectMapper()).writeValueAsString(department);
+//        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/departments")
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .content(content);
+//        ResultActions actualPerformResult = MockMvcBuilders.standaloneSetup(this.departmentController)
+//                .build()
+//                .perform(requestBuilder);
+//        actualPerformResult.andExpect(MockMvcResultMatchers.status().is(405));
+//    }
 }
 
